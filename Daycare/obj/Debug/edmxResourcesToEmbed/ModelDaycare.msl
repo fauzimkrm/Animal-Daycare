@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_daycareContextModelStoreContainer" CdmEntityContainer="db_daycareContextEntities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="db_daycareContextModel.Customers">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+          <ScalarProperty Name="customer_phone" ColumnName="customer_phone" />
+          <ScalarProperty Name="customer_address" ColumnName="customer_address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Daycares">
+      <EntityTypeMapping TypeName="db_daycareContextModel.Daycares">
+        <MappingFragment StoreEntitySet="Daycares">
+          <ScalarProperty Name="daycare_id" ColumnName="daycare_id" />
+          <ScalarProperty Name="pet_id" ColumnName="pet_id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="daycare_date" ColumnName="daycare_date" />
+          <ScalarProperty Name="daycare_pickup_date" ColumnName="daycare_pickup_date" />
+          <ScalarProperty Name="daycare_cost" ColumnName="daycare_cost" />
+          <ScalarProperty Name="dayare_status" ColumnName="dayare_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="db_daycareContextModel.Employees">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="employee_name" ColumnName="employee_name" />
+          <ScalarProperty Name="employee_phone" ColumnName="employee_phone" />
+          <ScalarProperty Name="employee_address" ColumnName="employee_address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pet_Types">
+      <EntityTypeMapping TypeName="db_daycareContextModel.Pet_Types">
+        <MappingFragment StoreEntitySet="Pet_Types">
+          <ScalarProperty Name="pet_type_id" ColumnName="pet_type_id" />
+          <ScalarProperty Name="pet_type_name" ColumnName="pet_type_name" />
+          <ScalarProperty Name="pet_type_cost" ColumnName="pet_type_cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pets">
+      <EntityTypeMapping TypeName="db_daycareContextModel.Pets">
+        <MappingFragment StoreEntitySet="Pets">
+          <ScalarProperty Name="pet_id" ColumnName="pet_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="pet_type_id" ColumnName="pet_type_id" />
+          <ScalarProperty Name="pet_name" ColumnName="pet_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pickups">
+      <EntityTypeMapping TypeName="db_daycareContextModel.Pickups">
+        <MappingFragment StoreEntitySet="Pickups">
+          <ScalarProperty Name="pickup_charge" ColumnName="pickup_charge" />
+          <ScalarProperty Name="pickup_date" ColumnName="pickup_date" />
+          <ScalarProperty Name="daycare_id" ColumnName="daycare_id" />
+          <ScalarProperty Name="pickup_id" ColumnName="pickup_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

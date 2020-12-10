@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_daycareContextModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="customer_id" />
+    </Key>
+    <Property Name="customer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customer_name" Type="varchar" MaxLength="50" />
+    <Property Name="customer_phone" Type="varchar" MaxLength="50" />
+    <Property Name="customer_address" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Daycares">
+    <Key>
+      <PropertyRef Name="daycare_id" />
+    </Key>
+    <Property Name="daycare_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pet_id" Type="int" />
+    <Property Name="employee_id" Type="int" />
+    <Property Name="daycare_date" Type="date" />
+    <Property Name="daycare_pickup_date" Type="date" />
+    <Property Name="daycare_cost" Type="bigint" />
+    <Property Name="dayare_status" Type="int" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="employee_id" />
+    </Key>
+    <Property Name="employee_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="employee_name" Type="varchar" MaxLength="50" />
+    <Property Name="employee_phone" Type="varchar" MaxLength="50" />
+    <Property Name="employee_address" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Pet_Types">
+    <Key>
+      <PropertyRef Name="pet_type_id" />
+    </Key>
+    <Property Name="pet_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pet_type_name" Type="varchar" MaxLength="50" />
+    <Property Name="pet_type_cost" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Pets">
+    <Key>
+      <PropertyRef Name="pet_id" />
+    </Key>
+    <Property Name="pet_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customer_id" Type="int" />
+    <Property Name="pet_type_id" Type="int" />
+    <Property Name="pet_name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Pickups">
+    <Key>
+      <PropertyRef Name="pickup_id" />
+    </Key>
+    <Property Name="pickup_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="daycare_id" Type="int" />
+    <Property Name="pickup_date" Type="date" />
+    <Property Name="pickup_charge" Type="bigint" />
+  </EntityType>
+  <Association Name="FK_Daycares_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Daycares" Type="Self.Daycares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Daycares">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Daycares_Pets">
+    <End Role="Pets" Type="Self.Pets" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Daycares" Type="Self.Daycares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pets">
+        <PropertyRef Name="pet_id" />
+      </Principal>
+      <Dependent Role="Daycares">
+        <PropertyRef Name="pet_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pets_Customer">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Pets" Type="Self.Pets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="customer_id" />
+      </Principal>
+      <Dependent Role="Pets">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pets_Pet_Types">
+    <End Role="Pet_Types" Type="Self.Pet_Types" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Pets" Type="Self.Pets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pet_Types">
+        <PropertyRef Name="pet_type_id" />
+      </Principal>
+      <Dependent Role="Pets">
+        <PropertyRef Name="pet_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pickups_Daycare">
+    <End Role="Daycares" Type="Self.Daycares" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Pickups" Type="Self.Pickups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Daycares">
+        <PropertyRef Name="daycare_id" />
+      </Principal>
+      <Dependent Role="Pickups">
+        <PropertyRef Name="daycare_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db_daycareContextModelStoreContainer">
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Daycares" EntityType="Self.Daycares" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pet_Types" EntityType="Self.Pet_Types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pets" EntityType="Self.Pets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pickups" EntityType="Self.Pickups" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Daycares_Employees" Association="Self.FK_Daycares_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Daycares" EntitySet="Daycares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Daycares_Pets" Association="Self.FK_Daycares_Pets">
+      <End Role="Pets" EntitySet="Pets" />
+      <End Role="Daycares" EntitySet="Daycares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pets_Customer" Association="Self.FK_Pets_Customer">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Pets" EntitySet="Pets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pets_Pet_Types" Association="Self.FK_Pets_Pet_Types">
+      <End Role="Pet_Types" EntitySet="Pet_Types" />
+      <End Role="Pets" EntitySet="Pets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pickups_Daycare" Association="Self.FK_Pickups_Daycare">
+      <End Role="Daycares" EntitySet="Daycares" />
+      <End Role="Pickups" EntitySet="Pickups" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

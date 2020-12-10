@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B60A295-3266-430A-9C89-4B256F8C8961}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Daycare</RootNamespace>
+    <AssemblyName>Daycare</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCustomerForm.Designer.cs">
+      <DependentUpon>AddCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDaycareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDaycareForm.Designer.cs">
+      <DependentUpon>AddDaycareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployeeForm.Designer.cs">
+      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPetForm.Designer.cs">
+      <DependentUpon>AddPetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers.cs">
+      <DependentUpon>ModelDaycare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataDaycareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataDaycareForm.Designer.cs">
+      <DependentUpon>DataDaycareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DaycareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DaycareForm.Designer.cs">
+      <DependentUpon>DaycareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Daycares.cs">
+      <DependentUpon>ModelDaycare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EditCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCustomerForm.Designer.cs">
+      <DependentUpon>EditCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEmployeeForm.Designer.cs">
+      <DependentUpon>EditEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditPetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPetForm.Designer.cs">
+      <DependentUpon>EditPetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees.cs">
+      <DependentUpon>ModelDaycare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDaycare.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDaycare.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDaycare.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDaycare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDaycare.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDaycare.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PetForm.Designer.cs">
+      <DependentUpon>PetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pets.cs">
+      <DependentUpon>ModelDaycare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pet_Types.cs">
+      <DependentUpon>ModelDaycare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PickupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PickupForm.Designer.cs">
+      <DependentUpon>PickupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pickups.cs">
+      <DependentUpon>ModelDaycare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuccessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuccessForm.Designer.cs">
+      <DependentUpon>SuccessForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddCustomerForm.resx">
+      <DependentUpon>AddCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDaycareForm.resx">
+      <DependentUpon>AddDaycareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEmployeeForm.resx">
+      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPetForm.resx">
+      <DependentUpon>AddPetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataDaycareForm.resx">
+      <DependentUpon>DataDaycareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DaycareForm.resx">
+      <DependentUpon>DaycareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCustomerForm.resx">
+      <DependentUpon>EditCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEmployeeForm.resx">
+      <DependentUpon>EditEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPetForm.resx">
+      <DependentUpon>EditPetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PetForm.resx">
+      <DependentUpon>PetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PickupForm.resx">
+      <DependentUpon>PickupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuccessForm.resx">
+      <DependentUpon>SuccessForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="ModelDaycare.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelDaycare.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelDaycare.edmx.diagram">
+      <DependentUpon>ModelDaycare.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dog-carrier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pawprint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pet-house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\participant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelDaycare.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelDaycare.Context.cs</LastGenOutput>
+      <DependentUpon>ModelDaycare.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelDaycare.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDaycare.edmx</DependentUpon>
+      <LastGenOutput>ModelDaycare.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\dog-house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
